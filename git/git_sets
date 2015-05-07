@@ -1,0 +1,23 @@
+После инсталляции возникала проблема.
+
+1. создал проект /d/pro/php/ol.question
+   $ git init
+ 
+2. $ git clone https://github.com/gololol/ol.question.git
+
+   Cloning into 'ol.az'...
+   fatal: unable to access 'https://github.com/gololol/ol.az.git/': Failed connect to github.com:443; No error
+
+Проблема: comp work87 работает через прокси 
+
+   $ git config --global https.proxy https://192.168.0.3:3128   
+
+   $ git config --global http.proxy http://192.168.0.3:3128   
+
+При этом в файл  C:\Users\OL\.gitconfig
+дописываются строки
+
+[http]
+	proxy = http://192.168.0.3:3128
+[https]
+	proxy = https://192.168.0.3:3128
